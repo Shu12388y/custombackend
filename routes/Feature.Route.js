@@ -1,14 +1,14 @@
 import { Router } from "express";
-// import { getFeatureController } from "../controller/Feature.controller.js";
-// import { postFeatureContoller } from "../controller/Feature.controller.js";
-// import { getWebDevContent } from "../controller/FeatureWebDev.controller.js";
-// import { postWebDevContent } from "../controller/FeatureWebDev.controller.js";
+
 
 import { typescriptFeature } from "../model/FeatureTypeScript.Model.js";
 import { Feature } from "../model/Feature.Model.js";
 import { webFeature } from "../model/FeatureWebDev.Model.js";
 import { getData } from "../controller/Main.Controller.js";
 import { postData } from "../controller/Main.Controller.js";
+import { devopsFeature } from "../model/FeatureDevops.Model.js";
+
+
 const Featureroute = Router()
 
 
@@ -25,13 +25,12 @@ Featureroute.get("/api/v1/webdev",async(req,res)=>{
     await getData(req,res,webFeature);
 });
 Featureroute.post("/api/v1/postwebdev",async(req,res)=>{
-    await getData(req,res,webFeature);
+    await postData(req,res,webFeature);
 });
 
 
 
 // typescript route
-
 Featureroute.get("/api/v1/typescript", async (req, res) => {
     await getData(req, res, typescriptFeature);
 });
@@ -39,6 +38,17 @@ Featureroute.get("/api/v1/typescript", async (req, res) => {
 Featureroute.post("/api/v1/typescript", async (req, res) => {
     await postData(req, res, typescriptFeature);
 });
+
+
+// devops route
+Featureroute.get("/api/v1/devops", async (req, res) => {
+    await getData(req, res, devopsFeature);
+});
+
+Featureroute.post("/api/v1/typescript", async (req, res) => {
+    await postData(req, res, devopsFeature);
+});
+
 
 
 

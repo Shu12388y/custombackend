@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "localdev":"node index.js",
+    "start": "pm2 start index.js -i max",
+    "stop": "pm2 stop index.js -i max"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.4.1"
+    "helmet": "^7.1.0",
+    "mongoose": "^8.4.1",
+    "pm2": "^5.4.0"
   }
 }

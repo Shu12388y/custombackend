@@ -1,4 +1,4 @@
-export async function getData(req, res, modelName) {
+export async function getData(_req, res, modelName) {
     try {
         if (!modelName) {
             return res.status(500).json({"message": "modelName is required"});
