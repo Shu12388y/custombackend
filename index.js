@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import { connectDatabase } from "./db/db.js";
 import dotenv from "dotenv";
 import Featureroute from "./routes/Feature.Route.js";
-import FeatureWebDev from "./routes/FeatureWebDev.Route.js";
+// import FeatureWebDev from "./routes/FeatureWebDev.Route.js";
 
 
 dotenv.config({
@@ -25,7 +25,10 @@ const app  = express();
 
 
 
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:3000']
+}));
+
 app.use(express.json({limit:"100kb"}))
 app.use(bodyParser.urlencoded({extended:true,limit:'100kb'}))
 
@@ -33,7 +36,7 @@ app.use(bodyParser.urlencoded({extended:true,limit:'100kb'}))
 
 // routes 
 app.use(Featureroute)
-app.use(FeatureWebDev)
+// app.use(FeatureWebDev)
 
 
 

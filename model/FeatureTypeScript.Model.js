@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const FeatureWebDevModel = mongoose.Schema({
+const FeatureTypeScriptModel = mongoose.Schema({
     name:{
         type:String
     },
@@ -16,4 +16,4 @@ const FeatureWebDevModel = mongoose.Schema({
 
 
 
-export const webFeature = mongoose.model('webFeature',FeatureWebDevModel)
+export const typescriptFeature = mongoose.model('typescriptbFeature',FeatureTypeScriptModel);
