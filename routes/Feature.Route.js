@@ -39,6 +39,23 @@ Featureroute.post("/api/v1/posttypescript", async (req, res) => {
 });
 
 
+
+
+
+// typescript route
+Featureroute.get("/api/v1/typescript", async (req, res) => {
+    await getData(req, res, typescriptFeature);
+});
+
+Featureroute.post("/api/v1/posttypescript", async (req, res) => {
+    await postData(req, res, typescriptFeature);
+});
+
+
+
+
+
+
 // devops route
 Featureroute.get("/api/v1/devops", async (req, res) => {
     await getData(req, res, devopsFeature);
