@@ -6,32 +6,32 @@ import { Feature } from "../model/Feature.Model.js";
 import { devopsFeature } from "../model/FeatureDevops.Model.js";
 import { typescriptFeature } from "../model/FeatureTypeScript.Model.js";
 import { webFeature } from "../model/FeatureWebDev.Model.js";
-import { BigDataFeature } from './../model/Feature.BigData.Model';
-import { C_ProgramFeature } from './../model/Feature.C_Program.Model';
-import { ChatGPTFeature } from './../model/Feature.ChatGPT.Model';
-import { CheetSheetFeature } from './../model/Feature.CheetSheet.Model';
-import { CodingResourcesFeature } from './../model/Feature.CodingResources.Model';
-import { ComputerNetworkFeature } from './../model/Feature.ComputerNetwork.model';
-import { DataEngineerFeature } from './../model/Feature.DataEngineer.Model';
-import { DataScienceFeature } from './../model/Feature.DataScience.Model';
-import { DBMS_SQLResourcesFeature } from './../model/Feature.DBMS_SQLResources.Model';
-import { DSAHandwrittenNotesFeature } from './../model/Feature.DSAHandwrittenNotes.Model';
-import { DsaResourcesFeature } from './../model/Feature.DsaResources.Model';
-import { HRInterviewQuestionsFeature } from './../model/Feature.HRInterviewQuestions.Model';
-import { JavaFeature } from './../model/Feature.Java.Model';
-import { JavaScriptFeature } from './../model/Feature.JavaScript.Model';
-import { NodejsFeature } from './../model/Feature.Nodejs.Model';
-import { OOpsFeature } from './../model/Feature.OOps.Model';
-import { PythonFeature } from './../model/Feature.Python.Model';
-import { ReactFeature } from './../model/Feature.React.Model';
-import { RemoteHiringFeature } from './../model/Feature.RemoteHiring.Model';
-import { ResumeGuideFeature } from './../model/Feature.ResumeGuide.Model';
-import { RoadMapsFeature } from './../model/Feature.RoadMaps.Model';
-import { StartupListFeature } from './../model/Feature.StartupList.Model';
-import { SystemDesignFeature } from './../model/Feature.SystemDesign.Model';
-import { CompaniesCodingQuestionsFeature } from './../model/FeatureCompaniesCodingQuestions.Model';
-import { OperatingSystemFeature } from './../model/Featured.OperatingSystem.Model';
-import { CloudComputingFeature } from './../model/Feaure.CloudComputing.Model';
+import { BigDataFeature } from './../model/Feature.BigData.Model.js';
+import { C_ProgramFeature } from './../model/Feature.C_Program.Model.js';
+import { ChatGPTFeature } from './../model/Feature.ChatGPT.Model.js';
+import { CheetSheetFeature } from './../model/Feature.CheetSheet.Model.js';
+import { CodingResourcesFeature } from './../model/Feature.CodingResources.Model.js';
+import { ComputerNetworkFeature } from './../model/Feature.ComputerNetwork.model.js';
+import { DataEngineerFeature } from './../model/Feature.DataEngineer.Model.js';
+import { DataScienceFeature } from './../model/Feature.DataScience.Model.js';
+import { DBMS_SQLResourcesFeature } from './../model/Feature.DBMS_SQLResources.Model.js';
+import { DSAHandwrittenNotesFeature } from './../model/Feature.DSAHandwrittenNotes.Model.js';
+import { DsaResourcesFeature } from './../model/Feature.DsaResources.Model.js';
+import { HRInterviewQuestionsFeature } from './../model/Feature.HRInterviewQuestions.Model.js';
+import { JavaFeature } from './../model/Feature.Java.Model.js';
+import { JavaScriptFeature } from './../model/Feature.JavaScript.Model.js';
+import { NodejsFeature } from './../model/Feature.Nodejs.Model.js';
+import { OOpsFeature } from './../model/Feature.OOps.Model.js';
+import { PythonFeature } from './../model/Feature.Python.Model.js';
+import { ReactFeature } from './../model/Feature.React.Model.js';
+import { RemoteHiringFeature } from './../model/Feature.RemoteHiring.Model.js';
+import { ResumeGuideFeature } from './../model/Feature.ResumeGuide.Model.js';
+import { RoadMapsFeature } from './../model/Feature.RoadMaps.Model.js';
+import { StartupListFeature } from './../model/Feature.StartupList.Model.js';
+import { SystemDesignFeature } from './../model/Feature.SystemDesign.Model.js';
+import { CompaniesCodingQuestionsFeature } from './../model/FeatureCompaniesCodingQuestions.Model.js';
+import { OperatingSystemFeature } from './../model/Featured.OperatingSystem.Model.js';
+import { CloudComputingFeature } from './../model/Feaure.CloudComputing.Model.js';
 
 
 const Featureroute = Router()
@@ -314,9 +314,6 @@ Featureroute.post("/api/v1/postSystemDesign", async (req, res) => {
 });
 
 
-
-
-
 // CompaniesCodingQuestions route
 Featureroute.get("/api/v1/CompaniesCodingQuestions", async (req, res) => {
     await getData(req, res, CompaniesCodingQuestionsFeature);
@@ -325,11 +322,6 @@ Featureroute.get("/api/v1/CompaniesCodingQuestions", async (req, res) => {
 Featureroute.post("/api/v1/postCompaniesCodingQuestions", async (req, res) => {
     await postData(req, res, CompaniesCodingQuestionsFeature);
 });
-
-
-
-
-
 
 
 // OperatingSystem route
