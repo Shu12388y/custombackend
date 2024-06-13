@@ -5,11 +5,15 @@ import { connectDatabase } from "./db/db.js";
 import dotenv from "dotenv";
 import Featureroute from "./routes/Feature.Route.js";
 import helmet from "helmet";
+import { limiter } from "./rateLimiter/limit.js";
+
 
 
 dotenv.config({
     path:'.env'
 })
+
+
 
 
 const app  = express();
@@ -19,6 +23,9 @@ app.use(cors({
     origin: ['http://localhost:3000']
 }));
 
+
+app.use(limiter)
+app.use(express.urlencoded({extended:true}))
 app.use(express.json({limit:"100kb"}));
 app.use(bodyParser.urlencoded({extended:true,limit:'100kb'}));
 app.use(helmet());
