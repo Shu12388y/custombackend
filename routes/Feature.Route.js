@@ -76,7 +76,7 @@ Featureroute.post("/api/v1/postdevops", async (req, res) => {
 
 
 // AI_ML route
-Featureroute.get("/api/v1/AI_ML", async (req, res) => {
+Featureroute.get("/api/v1/ai", async (req, res) => {
     await getData(req, res, AI_MLFeature);
 });
 
@@ -86,7 +86,7 @@ Featureroute.post("/api/v1/POSTAI_ML", async (req, res) => {
 
 
 // BigData route
-Featureroute.get("/api/v1/BigData", async (req, res) => {
+Featureroute.get("/api/v1/bigdata", async (req, res) => {
     await getData(req, res, BigDataFeature);
 });
 
@@ -96,7 +96,7 @@ Featureroute.post("/api/v1/postBigData", async (req, res) => {
 
 
 // C_Progran route
-Featureroute.get("/api/v1/C_Program", async (req, res) => {
+Featureroute.get("/api/v1/cpluplus", async (req, res) => {
     await getData(req, res, C_ProgramFeature);
 });
 
@@ -106,7 +106,7 @@ Featureroute.post("/api/v1/postC_Program", async (req, res) => {
 
 
 // chatgpt route
-Featureroute.get("/api/v1/ChatGPT", async (req, res) => {
+Featureroute.get("/api/v1/chatgpt", async (req, res) => {
     await getData(req, res, ChatGPTFeature);
 });
 
@@ -116,7 +116,7 @@ Featureroute.post("/api/v1/postChatGPT", async (req, res) => {
 
 
 // CheetSheet route
-Featureroute.get("/api/v1/CheetSheet", async (req, res) => {
+Featureroute.get("/api/v1/cheetSheets", async (req, res) => {
     await getData(req, res, CheetSheetFeature);
 });
 
@@ -126,7 +126,7 @@ Featureroute.post("/api/v1/postCheetSheet", async (req, res) => {
 
 
 // CodingResources route
-Featureroute.get("/api/v1/CodingResources", async (req, res) => {
+Featureroute.get("/api/v1/coding", async (req, res) => {
     await getData(req, res, CodingResourcesFeature);
 });
 
@@ -136,7 +136,7 @@ Featureroute.post("/api/v1/postCodingResources", async (req, res) => {
 
 
 // ComputerNetwork route
-Featureroute.get("/api/v1/ComputerNetwork", async (req, res) => {
+Featureroute.get("/api/v1/cn", async (req, res) => {
     await getData(req, res, ComputerNetworkFeature);
 });
 
@@ -146,7 +146,7 @@ Featureroute.post("/api/v1/postComputerNetwork", async (req, res) => {
 
 
 // DataEngineer route
-Featureroute.get("/api/v1/DataEngineer", async (req, res) => {
+Featureroute.get("/api/v1/dataengineer", async (req, res) => {
     await getData(req, res, DataEngineerFeature);
 });
 
@@ -156,7 +156,7 @@ Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
 
 
 // DataScience route
-Featureroute.get("/api/v1/DataScience", async (req, res) => {
+Featureroute.get("/api/v1/ds", async (req, res) => {
     await getData(req, res, DataScienceFeature);
 });
 
@@ -166,7 +166,7 @@ Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
 
 
 // DBMS_SQLResources route
-Featureroute.get("/api/v1/DBMS_SQLResources", async (req, res) => {
+Featureroute.get("/api/v1/dbms", async (req, res) => {
     await getData(req, res, DBMS_SQLResourcesFeature);
 });
 
@@ -176,7 +176,7 @@ Featureroute.post("/api/v1/postDBMS_SQLResources", async (req, res) => {
 
 
 // DSAHandWrittenNotes route
-Featureroute.get("/api/v1/DSAHandWrittenNotes", async (req, res) => {
+Featureroute.get("/api/v1/dsahandwritten", async (req, res) => {
     await getData(req, res, DSAHandwrittenNotesFeature);
 });
 
@@ -186,7 +186,7 @@ Featureroute.post("/api/v1/DSAHandWrittenNotes", async (req, res) => {
 
 
 // DsaResources route
-Featureroute.get("/api/v1/DsaResources", async (req, res) => {
+Featureroute.get("/api/v1/dsaguide", async (req, res) => {
     await getData(req, res, DsaResourcesFeature);
 });
 
@@ -196,7 +196,7 @@ Featureroute.post("/api/v1/DsaResources", async (req, res) => {
 
 
 // HRInterviewQuestions route
-Featureroute.get("/api/v1/HRInterviewQuestions", async (req, res) => {
+Featureroute.get("/api/v1/hr", async (req, res) => {
     await getData(req, res, HRInterviewQuestionsFeature);
 });
 
@@ -206,7 +206,7 @@ Featureroute.post("/api/v1/postHRInterviewQuestions", async (req, res) => {
 
 
 // Java route
-Featureroute.get("/api/v1/Java", async (req, res) => {
+Featureroute.get("/api/v1/java", async (req, res) => {
     await getData(req, res, JavaFeature);
 });
 
@@ -216,7 +216,7 @@ Featureroute.post("/api/v1/postJava", async (req, res) => {
 
 
 // JavaScript route
-Featureroute.get("/api/v1/JavaScript", async (req, res) => {
+Featureroute.get("/api/v1/js", async (req, res) => {
     await getData(req, res, JavaScriptFeature);
 });
 
@@ -226,7 +226,7 @@ Featureroute.post("/api/v1/postJavaScript", async (req, res) => {
 
 
 // Nodejs route
-Featureroute.get("/api/v1/Nodejs", async (req, res) => {
+Featureroute.get("/api/v1/nodejs", async (req, res) => {
     await getData(req, res, NodejsFeature);
 });
 
@@ -236,7 +236,7 @@ Featureroute.post("/api/v1/postNodejs", async (req, res) => {
 
 
 // OOps route
-Featureroute.get("/api/v1/OOps", async (req, res) => {
+Featureroute.get("/api/v1/oops", async (req, res) => {
     await getData(req, res, OOpsFeature);
 });
 
@@ -245,7 +245,7 @@ Featureroute.post("/api/v1/postOOps", async (req, res) => {
 });
 
 // Python route
-Featureroute.get("/api/v1/Python", async (req, res) => {
+Featureroute.get("/api/v1/python", async (req, res) => {
     await getData(req, res, PythonFeature);
 });
 
@@ -255,7 +255,7 @@ Featureroute.post("/api/v1/postPython", async (req, res) => {
 
 
 // React route
-Featureroute.get("/api/v1/React", async (req, res) => {
+Featureroute.get("/api/v1/react", async (req, res) => {
     await getData(req, res, ReactFeature);
 });
 
@@ -265,7 +265,7 @@ Featureroute.post("/api/v1/postReact", async (req, res) => {
 
 
 // RemoteHiring route
-Featureroute.get("/api/v1/RemoteHiring", async (req, res) => {
+Featureroute.get("/api/v1/remoteresource", async (req, res) => {
     await getData(req, res, RemoteHiringFeature);
 });
 
@@ -275,7 +275,7 @@ Featureroute.post("/api/v1/postRemoteHiring", async (req, res) => {
 
 
 // ResumeGuide route
-Featureroute.get("/api/v1/ResumeGuide", async (req, res) => {
+Featureroute.get("/api/v1/resume", async (req, res) => {
     await getData(req, res, ResumeGuideFeature);
 });
 
@@ -295,7 +295,7 @@ Featureroute.post("/api/v1/postRoadMaps", async (req, res) => {
 
 
 // StartupList route
-Featureroute.get("/api/v1/StartupList", async (req, res) => {
+Featureroute.get("/api/v1/startup", async (req, res) => {
     await getData(req, res, StartupListFeature);
 });
 
@@ -305,7 +305,7 @@ Featureroute.post("/api/v1/postStartupList", async (req, res) => {
 
 
 // SystemDesign route
-Featureroute.get("/api/v1/SystemDesign", async (req, res) => {
+Featureroute.get("/api/v1/systemdesign", async (req, res) => {
     await getData(req, res, SystemDesignFeature);
 });
 
@@ -315,7 +315,7 @@ Featureroute.post("/api/v1/postSystemDesign", async (req, res) => {
 
 
 // CompaniesCodingQuestions route
-Featureroute.get("/api/v1/CompaniesCodingQuestions", async (req, res) => {
+Featureroute.get("/api/v1/companiesqs", async (req, res) => {
     await getData(req, res, CompaniesCodingQuestionsFeature);
 });
 
@@ -325,7 +325,7 @@ Featureroute.post("/api/v1/postCompaniesCodingQuestions", async (req, res) => {
 
 
 // OperatingSystem route
-Featureroute.get("/api/v1/OperatingSystem", async (req, res) => {
+Featureroute.get("/api/v1/os", async (req, res) => {
     await getData(req, res, OperatingSystemFeature);
 });
 
@@ -335,7 +335,7 @@ Featureroute.post("/api/v1/postOperatingSystem", async (req, res) => {
 
 
 // CloudComputing route
-Featureroute.get("/api/v1/CloudComputing", async (req, res) => {
+Featureroute.get("/api/v1/cloud", async (req, res) => {
     await getData(req, res, CloudComputingFeature);
 });
 

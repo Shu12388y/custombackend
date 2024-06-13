@@ -31,7 +31,7 @@ app.use(Featureroute)
 
 
 connectDatabase().then(()=>{
-    app.listen(process.env.PORT || 3000,()=>{
+    app.listen(process.env.PORT,()=>{
         console.log("server is on",process.env.PORT || 3000)
     } )
 }).catch((error)=>{
