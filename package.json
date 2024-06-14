@@ -5,11 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "localdev": "node index.js",
-    "start": "pm2 start index.js -i max",
-    "stop": "pm2 stop index.js -i max"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +20,6 @@
     "express-redis-cache": "^1.1.3",
     "helmet": "^7.1.0",
     "mongoose": "^8.4.1",
-    "pm2": "^5.4.0",
     "redis": "^4.6.14"
   }
 }

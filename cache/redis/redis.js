@@ -3,7 +3,7 @@ import expressRedisCache from 'express-redis-cache';
 
 // Create the Redis client with Upstash details
 const redisClient = redis.createClient({
-  url: 'rediss://default:AdfZAAIncDEwYzk5MGE3ZTEwODM0YWJkYjNiZmRmYTFiOWM1NTcxYnAxNTUyNTc@measured-skink-55257.upstash.io:6379',
+  url: process.env.REDIS_URL,
   tls: {} // Enable TLS for secure connection
 });
 

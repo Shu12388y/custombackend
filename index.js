@@ -6,6 +6,9 @@ import dotenv from "dotenv";
 import Featureroute from "./routes/Feature.Route.js";
 import helmet from "helmet";
 import { limiter } from "./rateLimiter/limit.js";
+import EmailRouter from "./routes/Email.Route.js";
+import VideoRouter from "./routes/Video.Route.js";
+import RoadMapRouter from "./routes/RoadMap.Route.js";
 
 
 
@@ -34,6 +37,9 @@ app.use(helmet());
 // routes 
 app.use(Featureroute)
 // app.use(FeatureWebDev)
+app.use(EmailRouter)
+app.use(VideoRouter)
+app.use(RoadMapRouter)
 
 
 
