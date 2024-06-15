@@ -9,6 +9,7 @@ import { limiter } from "./rateLimiter/limit.js";
 import EmailRouter from "./routes/Email.Route.js";
 import VideoRouter from "./routes/Video.Route.js";
 import RoadMapRouter from "./routes/RoadMap.Route.js";
+import HealthRoute from "./routes/Health.Route.js";
 
 
 
@@ -33,13 +34,14 @@ app.use(express.json({limit:"100kb"}));
 app.use(bodyParser.urlencoded({extended:true,limit:'100kb'}));
 app.use(helmet());
 
+app.set('trust proxy', 'loopback, 100.20.92.101');
 
 // routes 
 app.use(Featureroute)
-// app.use(FeatureWebDev)
 app.use(EmailRouter)
 app.use(VideoRouter)
 app.use(RoadMapRouter)
+app.use(HealthRoute)
 
 
 
