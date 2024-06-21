@@ -2,6 +2,18 @@ import express from "express";
 import {getData, postData} from "../controller/Main.Controller.js"
 import { Roadmap } from "../model/Roadmap/RoadMap.Model.js";
 import { WebDevRoadmap } from "../model/Roadmap/WebDevRoadMap.Model.js";
+import {PythonRoadmap} from "../model/Roadmap/PythonRoadMap.Model.js";
+import { PowerBiRoadmap } from "../model/Roadmap/PowerBiRoadmap.Model.js";
+import {JavaScriptRoadmap} from "../model/Roadmap/JavasciptRoadmap.Model.js";
+import {JavaRoadmap} from "../model/Roadmap/JavaRoadmap.Model.js";
+import {DevopsRoadmap} from "../model/Roadmap/DevopsRoadmap.Model.js";
+import {DSRoadmap} from "../model/Roadmap/DataScienceRoadmap.Model.js";
+import {CloudRoadmap} from "../model/Roadmap/CloudRoadmap.Model.js";
+import {DERoadmap} from "../model/Roadmap/DataEngineerRoadmap.Model.js";
+
+
+
+
 
 const RoadMapRouter = express.Router();
 
@@ -52,7 +64,7 @@ RoadMapRouter.get("/api/v1/jsroadmap",async(req,res)=>{
     await getData(req,res,JavaScriptRoadmap)
 })
 
-RoadMapRouter.post("api/v1/postjsroadmap",async(req,res)=>{
+RoadMapRouter.post("/api/v1/postjsroadmap",async(req,res)=>{
     await postData(req,res,JavaScriptRoadmap)
 })
 
@@ -81,11 +93,11 @@ RoadMapRouter.post("/api/v1/postdevopsroadmap",async(req,res)=>{
 // roadmap routes data science
 
 RoadMapRouter.get("/api/v1/dsroadmap",async(req,res)=>{
-    await getData(req,res,DataScienceRoadmap)
+    await getData(req,res,DSRoadmap)
 })
 
 RoadMapRouter.post("/api/v1/postdsroadmap",async(req,res)=>{
-    await postData(req,res,DataScienceRoadmap)
+    await postData(req,res,DSRoadmap)
 })
 
 
@@ -103,11 +115,11 @@ RoadMapRouter.post("/api/v1/postcloudroadmap",async(req,res)=>{
 
 // roadmap routes data engineer
 RoadMapRouter.get("/api/v1/deroadmap",async(req,res)=>{
-    await getData(req,res,DataEngineerRoadmap)
+    await getData(req,res,DERoadmap)
 })
 
 RoadMapRouter.post("/api/v1/postderoadmap",async(req,res)=>{
-    await getData(req,res,DataEngineerRoadmap)
+    await getData(req,res,DERoadmap)
 })
 
 

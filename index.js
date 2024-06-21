@@ -5,7 +5,7 @@ import { connectDatabase } from "./db/db.js";
 import dotenv from "dotenv";
 import Featureroute from "./routes/Feature.Route.js";
 import helmet from "helmet";
-import { limiter } from "./rateLimiter/limit.js";
+// import { limiter } from "./rateLimiter/limit.js";
 import EmailRouter from "./routes/Email.Route.js";
 import VideoRouter from "./routes/Video.Route.js";
 import RoadMapRouter from "./routes/RoadMap.Route.js";
@@ -35,13 +35,13 @@ if (cluster.isMaster) {
         origin: ['http://localhost:3000', 'https://letsresource.in']
     }));
 
-    app.use(limiter);
+    // app.use(limiter);
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json({ limit: "100kb" }));
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
     app.use(helmet());
 
-    app.set('trust proxy', 'loopback, 100.20.92.101');
+    // app.set('trust proxy', 'loopback, 100.20.92.101');
 
     // Routes 
     app.use(Featureroute);
