@@ -10,7 +10,7 @@ import {DevopsRoadmap} from "../model/Roadmap/DevopsRoadmap.Model.js";
 import {DSRoadmap} from "../model/Roadmap/DataScienceRoadmap.Model.js";
 import {CloudRoadmap} from "../model/Roadmap/CloudRoadmap.Model.js";
 import {DERoadmap} from "../model/Roadmap/DataEngineerRoadmap.Model.js";
-
+import {cache} from "../cache/redis/redis.js";
 
 
 
@@ -18,7 +18,7 @@ import {DERoadmap} from "../model/Roadmap/DataEngineerRoadmap.Model.js";
 const RoadMapRouter = express.Router();
 
 // get the roadmaps
-RoadMapRouter.get("/api/v1/roadmaps",async(req,res)=>{
+RoadMapRouter.get("/api/v1/roadmaps",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
        await getData(req,res,Roadmap)    
 })
 RoadMapRouter.post("/api/v1/postroadmaps",async(req,res)=>{
@@ -29,7 +29,7 @@ RoadMapRouter.post("/api/v1/postroadmaps",async(req,res)=>{
 
 // roadmaps routes web dev
 
-RoadMapRouter.get("/api/v1/webdevroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/webdevroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,WebDevRoadmap)
 });
 RoadMapRouter.post("/api/v1/postwebdevroadmap",async(req,res)=>{
@@ -38,7 +38,7 @@ RoadMapRouter.post("/api/v1/postwebdevroadmap",async(req,res)=>{
 
 // roadmaps routes python
 
-RoadMapRouter.get("/api/v1/pythonroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/pythonroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,PythonRoadmap)
 })
 
@@ -49,7 +49,7 @@ RoadMapRouter.post("/api/v1/postpythonroadmap",async(req,res)=>{
 
 // roadmaps routes powerbi
 
-RoadMapRouter.get("/api/v1/powerbiroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/powerbiroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,PowerBiRoadmap)
 })
 
@@ -60,7 +60,7 @@ RoadMapRouter.post("/api/v1/postpowerbiroadmap",async(req,res)=>{
 
 // roadmaps routes Javascript
 
-RoadMapRouter.get("/api/v1/jsroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/jsroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,JavaScriptRoadmap)
 })
 
@@ -70,7 +70,7 @@ RoadMapRouter.post("/api/v1/postjsroadmap",async(req,res)=>{
 
 
 // roadmap routes java 
-RoadMapRouter.get("/api/v1/javaroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/javaroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,JavaRoadmap)
 })
 
@@ -81,7 +81,7 @@ RoadMapRouter.post("/api/v1/postjavaroadmap",async(req,res)=>{
 
 
 // roadmap routes  devops 
-RoadMapRouter.get("/api/v1/devopsroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/devopsroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,DevopsRoadmap)
 })
 
@@ -92,7 +92,7 @@ RoadMapRouter.post("/api/v1/postdevopsroadmap",async(req,res)=>{
 
 // roadmap routes data science
 
-RoadMapRouter.get("/api/v1/dsroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/dsroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,DSRoadmap)
 })
 
@@ -103,7 +103,7 @@ RoadMapRouter.post("/api/v1/postdsroadmap",async(req,res)=>{
 
 
 // roadmap routes cloud
-RoadMapRouter.get("/api/v1/cloudroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/cloudroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,CloudRoadmap)
 
 })
@@ -114,7 +114,7 @@ RoadMapRouter.post("/api/v1/postcloudroadmap",async(req,res)=>{
 
 
 // roadmap routes data engineer
-RoadMapRouter.get("/api/v1/deroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/deroadmap",cache.route({name:"backend",expire:60*30}),async(req,res)=>{
     await getData(req,res,DERoadmap)
 })
 

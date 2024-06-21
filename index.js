@@ -7,7 +7,8 @@ import Featureroute from "./routes/Feature.Route.js";
 import helmet from "helmet";
 // import { limiter } from "./rateLimiter/limit.js";
 import EmailRouter from "./routes/Email.Route.js";
-import VideoRouter from "./routes/Video.Route.js";
+// import VideoRouter from "./routes/Video.Route.js";
+import ProjectRouter from "./routes/Project.Route.js";
 import RoadMapRouter from "./routes/RoadMap.Route.js";
 import HealthRoute from "./routes/Health.Route.js";
 import cluster from "node:cluster";
@@ -46,7 +47,7 @@ if (cluster.isMaster) {
     // Routes 
     app.use(Featureroute);
     app.use(EmailRouter);
-    app.use(VideoRouter);
+    app.use(ProjectRouter);
     app.use(RoadMapRouter);
     app.use(HealthRoute);
 

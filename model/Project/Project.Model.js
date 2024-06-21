@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const VideoSchema =  mongoose.Schema({
+const ProjectSchema =  mongoose.Schema({
     name:{
         type:String
     },
@@ -14,4 +14,4 @@ const VideoSchema =  mongoose.Schema({
 },{timestamps:true})
 
 
-export const Video = mongoose.model("Video",VideoSchema);
+export const Project = mongoose.model("Project",ProjectSchema);
