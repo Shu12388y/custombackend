@@ -103,7 +103,7 @@ RoadMapRouter.post("/api/v1/postdsroadmap",async(req,res)=>{
 
 
 // roadmap routes cloud
-RoadMapRouter.get("api/v1/cloudroadmap",async(req,res)=>{
+RoadMapRouter.get("/api/v1/cloudroadmap",async(req,res)=>{
     await getData(req,res,CloudRoadmap)
 
 })
