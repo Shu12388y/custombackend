@@ -5,15 +5,17 @@ import { connectDatabase } from "./db/db.js";
 import dotenv from "dotenv";
 import Featureroute from "./routes/Feature.Route.js";
 import helmet from "helmet";
-// import { limiter } from "./rateLimiter/limit.js";
+import { limiter } from "./rateLimiter/limit.js";
 import EmailRouter from "./routes/Email.Route.js";
-// import VideoRouter from "./routes/Video.Route.js";
 import ProjectRouter from "./routes/Project.Route.js";
 import RoadMapRouter from "./routes/RoadMap.Route.js";
 import HealthRoute from "./routes/Health.Route.js";
 import cluster from "node:cluster";
 import os from "node:os";
 import { mail } from "./utils/email.js";
+import susbcribeRoute from "./routes/Subscribe.Route.js";
+
+
 
 dotenv.config({ path: '.env' });
 
@@ -36,13 +38,13 @@ if (cluster.isMaster) {
         origin: ['http://localhost:3000', 'https://letsresource.in']
     }));
 
-    // app.use(limiter);
+    app.use(limiter);
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json({ limit: "100kb" }));
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
     app.use(helmet());
 
-    // app.set('trust proxy', 'loopback, 100.20.92.101');
+    app.set('trust proxy', 'loopback, 100.20.92.101');
 
     // Routes 
     app.use(Featureroute);
@@ -50,6 +52,14 @@ if (cluster.isMaster) {
     app.use(ProjectRouter);
     app.use(RoadMapRouter);
     app.use(HealthRoute);
+    app.use(susbcribeRoute);
+
+
+
+
+
+
+
 
     connectDatabase().then(() => {
         const port = process.env.PORT || 3000;

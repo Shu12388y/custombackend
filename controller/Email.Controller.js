@@ -2,14 +2,15 @@ import { EmailModel } from "../model/emailForm/Email.Model.js"
 
 export async function EmailController(req,res){
     try {
-        const {userName,topic,subject,message} = await req.body;
+        const {email,name,topic,subject,message} = await req.body;
     
-        if(![userName && topic && subject && message]){
+        if(!email && !name && !topic && !subject && !message){
             return res.status(404).json({"message":"All field are required"})
         }
     
         const userEmail  =  await new EmailModel({
-            userName,
+            email,
+            name,
             topic,
             subject,
             message

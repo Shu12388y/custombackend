@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const EmailSchema = mongoose.Schema({
-    userEmail:{
+    email:{
         type:String
     },
-    userName:{
+    name:{
         type:String
     },
     topic:{
