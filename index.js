@@ -42,7 +42,7 @@ dotenv.config({ path: '.env' });
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
     app.use(helmet());
 
-    app.set('trust proxy', 'loopback, 100.20.92.101');
+    app.set('trust proxy', 'loopback, 13.228.225.19');
 
     // Routes 
     app.use(Featureroute);
