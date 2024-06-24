@@ -10,8 +10,6 @@ import EmailRouter from "./routes/Email.Route.js";
 import ProjectRouter from "./routes/Project.Route.js";
 import RoadMapRouter from "./routes/RoadMap.Route.js";
 import HealthRoute from "./routes/Health.Route.js";
-import cluster from "node:cluster";
-import os from "node:os";
 import { mail } from "./utils/email.js";
 import susbcribeRoute from "./routes/Subscribe.Route.js";
 
@@ -19,19 +17,19 @@ import susbcribeRoute from "./routes/Subscribe.Route.js";
 
 dotenv.config({ path: '.env' });
 
-if (cluster.isMaster) {
-    const cpuCount = os.cpus().length;
-    console.log(`Master cluster setting up ${cpuCount} workers...`);
+// if (cluster.isMaster) {
+//     const cpuCount = os.cpus().length;
+//     console.log(`Master cluster setting up ${cpuCount} workers...`);
 
-    for (let i = 0; i < cpuCount; i++) {
-        cluster.fork();
-    }
+//     for (let i = 0; i < cpuCount; i++) {
+//         cluster.fork();
+//     }
 
-    cluster.on('exit', (worker) => {
-        console.log(`Worker ${worker.id} exited. Starting a new worker...`);
-        cluster.fork();
-    });
-} else {
+//     cluster.on('exit', (worker) => {
+//         console.log(`Worker ${worker.id} exited. Starting a new worker...`);
+//         cluster.fork();
+//     });
+// } else {
     const app = express();
 
     app.use(cors({
@@ -76,4 +74,4 @@ if (cluster.isMaster) {
             console.error("Failed to send error email:", emailError);
         }
     });
-}
+// }
