@@ -12,6 +12,7 @@ import RoadMapRouter from "./routes/RoadMap.Route.js";
 import HealthRoute from "./routes/Health.Route.js";
 import { mail } from "./utils/email.js";
 import susbcribeRoute from "./routes/Subscribe.Route.js";
+import interviewRoute from "./routes/Interview.Route.js";
 
 
 
@@ -42,7 +43,7 @@ dotenv.config({ path: '.env' });
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
     app.use(helmet());
 
-    app.set('trust proxy', 'loopback, 13.228.225.19');
+    app.set('trust proxy', 'loopback, 35.160.120.126');
 
     // Routes 
     app.use(Featureroute);
@@ -51,6 +52,7 @@ dotenv.config({ path: '.env' });
     app.use(RoadMapRouter);
     app.use(HealthRoute);
     app.use(susbcribeRoute);
+    app.use(interviewRoute);
 
 
 
