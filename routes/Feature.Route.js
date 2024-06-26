@@ -1,64 +1,63 @@
 import { Router } from "express";
-import { cache } from "../cache/redis/redis.js";
+import { AI_MLFeature, CodingResourcesFeature, ComputerNetworkFeature, DBMS_SQLResourcesFeature, DSAHandwrittenNotesFeature, DataEngineerFeature, DataScienceFeature, DsaResourcesFeature, HRInterviewQuestionsFeature, CheetSheetFeature, ChatGPTFeature, CloudComputingFeature, OperatingSystemFeature, devopsFeature, CompaniesCodingQuestionsFeature, SystemDesignFeature, StartupListFeature, RoadMapsFeature, ResumeGuideFeature, RemoteHiringFeature, ReactFeature, Feature, webFeature, typescriptFeature, BigDataFeature, C_ProgramFeature, JavaFeature, JavaScriptFeature, NodejsFeature, OOpsFeature, PythonFeature } from "../model/Feature/exports/featureexportmodel.js";
 
-import { getData, postData } from "../controller/Main.Controller.js";
-import { BigDataFeature } from '../model/Feature/Feature.BigData.Model.js';
-import { C_ProgramFeature } from '../model/Feature/Feature.C_Program.Model.js';
-import { ChatGPTFeature } from '../model/Feature/Feature.ChatGPT.Model.js';
-import { CheetSheetFeature } from '../model/Feature/Feature.CheetSheet.Model.js';
-import { CodingResourcesFeature } from '../model/Feature/Feature.CodingResources.Model.js';
-import { ComputerNetworkFeature } from '../model/Feature/Feature.ComputerNetwork.model.js';
-import { DBMS_SQLResourcesFeature } from '../model/Feature/Feature.DBMS_SQLResources.Model.js';
-import { DSAHandwrittenNotesFeature } from '../model/Feature/Feature.DSAHandwrittenNotes.Model.js';
-import { DataEngineerFeature } from '../model/Feature/Feature.DataEngineer.Model.js';
-import { DataScienceFeature } from '../model/Feature/Feature.DataScience.Model.js';
-import { DsaResourcesFeature } from '../model/Feature/Feature.DsaResources.Model.js';
-import { HRInterviewQuestionsFeature } from '../model/Feature/Feature.HRInterviewQuestions.Model.js';
-import { JavaFeature } from '../model/Feature/Feature.Java.Model.js';
-import { JavaScriptFeature } from '../model/Feature/Feature.JavaScript.Model.js';
-import { Feature } from "../model/Feature/Feature.Model.js";
-import { NodejsFeature } from '../model/Feature/Feature.Nodejs.Model.js';
-import { OOpsFeature } from '../model/Feature/Feature.OOps.Model.js';
-import { PythonFeature } from '../model/Feature/Feature.Python.Model.js';
-import { ReactFeature } from '../model/Feature/Feature.React.Model.js';
-import { RemoteHiringFeature } from '../model/Feature/Feature.RemoteHiring.Model.js';
-import { ResumeGuideFeature } from '../model/Feature/Feature.ResumeGuide.Model.js';
-import { RoadMapsFeature } from '../model/Feature/Feature.RoadMaps.Model.js';
-import { StartupListFeature } from '../model/Feature/Feature.StartupList.Model.js';
-import { SystemDesignFeature } from '../model/Feature/Feature.SystemDesign.Model.js';
-import { CompaniesCodingQuestionsFeature } from '../model/Feature/FeatureCompaniesCodingQuestions.Model.js';
-import { devopsFeature } from "../model/Feature/FeatureDevops.Model.js";
-import { typescriptFeature } from "../model/Feature/FeatureTypeScript.Model.js";
-import { webFeature } from "../model/Feature/FeatureWebDev.Model.js";
-import { OperatingSystemFeature } from '../model/Feature/Featured.OperatingSystem.Model.js';
-import { CloudComputingFeature } from '../model/Feature/Feaure.CloudComputing.Model.js';
+import { postData } from "../controller/Main.Controller.js";
+import {
+    getaiFeatures,
+    getFeature,
+    getwebFeature,
+    getDBMS_SQLResourcesFeatures,
+    getDSAHandwrittenNotesFeatures,
+    getDataEngineerFeatures,
+    getDataScienceFeatures,
+    getDsaResourcesFeatures,
+    getHRInterviewQuestionsFeatures,
+    getCheetSheetFeatures,
+    getChatGPTFeatures,
+    getCloudComputingFeatures,
+    getOperatingSystemFeatures,
+    getDevopsFeatures,
+    getCompaniesCodingQuestionsFeatures,
+    getSystemDesignFeatures,
+    getStartupListFeatures,
+    getRoadMapsFeatures,
+    getResumeGuideFeatures,
+    getRemoteHiringFeatures,
+    getReactFeatures,
+    getTypescriptFeatures,
+    getBigDataFeatures,
+    getC_ProgramFeatures,
+    getJavaFeatures,
+    getJavaScriptFeatures,
+    getNodejsFeatures,
+    getOOpsFeatures,
+    getPythonFeatures,
+    getcodingFeature,
+    getcomputernewtworkFeature
+} from "../controller/FeatureController/FeatureController.js";
 
 
 const Featureroute = Router()
 
 
+/*
 
-Featureroute.get("/api/v1/feature", cache.route({name:'backend',expire:60*60*60}),async(req,res)=>{
-    await getData(req,res,Feature);
+*/
+
+Featureroute.get("/api/v1/feature", getFeature)
+Featureroute.post("/api/v1/postfeature", async (req, res) => {
+    await postData(req, res, Feature);
 })
-Featureroute.post("/api/v1/postfeature",async(req,res)=>{
-    await postData(req,res,Feature);
-})
 
+Featureroute.get("/api/v1/webdev", getwebFeature);
 
-// web devlopment route
-Featureroute.get("/api/v1/webdev",cache.route({name:'backend',expire:60*60*60}),async(req,res)=>{
-    await getData(req,res,webFeature);
-});
-Featureroute.post("/api/v1/postwebdev",async(req,res)=>{
-    await postData(req,res,webFeature);
+Featureroute.post("/api/v1/postwebdev", async (req, res) => {
+    await postData(req, res, webFeature);
 });
 
 
 // typescript route
-Featureroute.get("/api/v1/typescript",cache.route({name:'backend',expire:60*60*60}),async (req, res) => {
-    await getData(req, res, typescriptFeature);
-});
+Featureroute.get("/api/v1/typescript", getTypescriptFeatures);
 
 Featureroute.post("/api/v1/posttypescript", async (req, res) => {
     await postData(req, res, typescriptFeature);
@@ -66,9 +65,7 @@ Featureroute.post("/api/v1/posttypescript", async (req, res) => {
 
 
 // devops route
-Featureroute.get("/api/v1/devops",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, devopsFeature);
-});
+Featureroute.get("/api/v1/devops", getDevopsFeatures);
 
 Featureroute.post("/api/v1/postdevops", async (req, res) => {
     await postData(req, res, devopsFeature);
@@ -76,9 +73,7 @@ Featureroute.post("/api/v1/postdevops", async (req, res) => {
 
 
 // AI_ML route
-Featureroute.get("/api/v1/ai",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, AI_MLFeature);
-});
+Featureroute.get("/api/v1/ai", getaiFeatures);
 
 Featureroute.post("/api/v1/POSTAI_ML", async (req, res) => {
     await postData(req, res, AI_MLFeature);
@@ -86,9 +81,7 @@ Featureroute.post("/api/v1/POSTAI_ML", async (req, res) => {
 
 
 // BigData route
-Featureroute.get("/api/v1/bigdata",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, BigDataFeature);
-});
+Featureroute.get("/api/v1/bigdata", getBigDataFeatures);
 
 Featureroute.post("/api/v1/postBigData", async (req, res) => {
     await postData(req, res, BigDataFeature);
@@ -96,9 +89,7 @@ Featureroute.post("/api/v1/postBigData", async (req, res) => {
 
 
 // C_Progran route
-Featureroute.get("/api/v1/cpluplus",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, C_ProgramFeature);
-});
+Featureroute.get("/api/v1/cpluplus", getC_ProgramFeatures);
 
 Featureroute.post("/api/v1/postC_Program", async (req, res) => {
     await postData(req, res, C_ProgramFeature);
@@ -106,9 +97,7 @@ Featureroute.post("/api/v1/postC_Program", async (req, res) => {
 
 
 // chatgpt route
-Featureroute.get("/api/v1/chatgpt",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, ChatGPTFeature);
-});
+Featureroute.get("/api/v1/chatgpt", getChatGPTFeatures);
 
 Featureroute.post("/api/v1/postChatGPT", async (req, res) => {
     await postData(req, res, ChatGPTFeature);
@@ -116,19 +105,15 @@ Featureroute.post("/api/v1/postChatGPT", async (req, res) => {
 
 
 // CheetSheet route
-Featureroute.get("/api/v1/cheetSheets",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, CheetSheetFeature);
-});
+Featureroute.get("/api/v1/cheetSheets", getCheetSheetFeatures);
 
 Featureroute.post("/api/v1/postCheetSheet", async (req, res) => {
-    await postData(req, res, ChatGPTFeature);
+    await postData(req, res, CheetSheetFeature);
 });
 
 
 // CodingResources route
-Featureroute.get("/api/v1/coding",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, CodingResourcesFeature);
-});
+Featureroute.get("/api/v1/coding", getcodingFeature);
 
 Featureroute.post("/api/v1/postCodingResources", async (req, res) => {
     await postData(req, res, CodingResourcesFeature);
@@ -136,9 +121,7 @@ Featureroute.post("/api/v1/postCodingResources", async (req, res) => {
 
 
 // ComputerNetwork route
-Featureroute.get("/api/v1/cn",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, ComputerNetworkFeature);
-});
+Featureroute.get("/api/v1/cn", getcomputernewtworkFeature);
 
 Featureroute.post("/api/v1/postComputerNetwork", async (req, res) => {
     await postData(req, res, ComputerNetworkFeature);
@@ -146,9 +129,7 @@ Featureroute.post("/api/v1/postComputerNetwork", async (req, res) => {
 
 
 // DataEngineer route
-Featureroute.get("/api/v1/dataengineer",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, DataEngineerFeature);
-});
+Featureroute.get("/api/v1/dataengineer", getDataEngineerFeatures);
 
 Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
     await postData(req, res, DataEngineerFeature);
@@ -156,9 +137,7 @@ Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
 
 
 // DataScience route
-Featureroute.get("/api/v1/ds",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, DataScienceFeature);
-});
+Featureroute.get("/api/v1/ds", getDataScienceFeatures);
 
 Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
     await postData(req, res, DataScienceFeature);
@@ -166,9 +145,7 @@ Featureroute.post("/api/v1/postDataEngineer", async (req, res) => {
 
 
 // DBMS_SQLResources route
-Featureroute.get("/api/v1/dbms",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, DBMS_SQLResourcesFeature);
-});
+Featureroute.get("/api/v1/dbms", getDBMS_SQLResourcesFeatures);
 
 Featureroute.post("/api/v1/postDBMS_SQLResources", async (req, res) => {
     await postData(req, res, DBMS_SQLResourcesFeature);
@@ -176,9 +153,7 @@ Featureroute.post("/api/v1/postDBMS_SQLResources", async (req, res) => {
 
 
 // DSAHandWrittenNotes route
-Featureroute.get("/api/v1/dsahandwritten",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, DSAHandwrittenNotesFeature);
-});
+Featureroute.get("/api/v1/dsahandwritten", getDSAHandwrittenNotesFeatures);
 
 Featureroute.post("/api/v1/DSAHandWrittenNotes", async (req, res) => {
     await postData(req, res, DSAHandwrittenNotesFeature);
@@ -186,9 +161,7 @@ Featureroute.post("/api/v1/DSAHandWrittenNotes", async (req, res) => {
 
 
 // DsaResources route
-Featureroute.get("/api/v1/dsaguide",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, DsaResourcesFeature);
-});
+Featureroute.get("/api/v1/dsaguide", getDsaResourcesFeatures);
 
 Featureroute.post("/api/v1/DsaResources", async (req, res) => {
     await postData(req, res, DsaResourcesFeature);
@@ -196,9 +169,7 @@ Featureroute.post("/api/v1/DsaResources", async (req, res) => {
 
 
 // HRInterviewQuestions route
-Featureroute.get("/api/v1/hr", cache.route({name:'backend',expire:60*60*60}),async (req, res) => {
-    await getData(req, res, HRInterviewQuestionsFeature);
-});
+Featureroute.get("/api/v1/hr", getHRInterviewQuestionsFeatures);
 
 Featureroute.post("/api/v1/postHRInterviewQuestions", async (req, res) => {
     await postData(req, res, HRInterviewQuestionsFeature);
@@ -206,9 +177,7 @@ Featureroute.post("/api/v1/postHRInterviewQuestions", async (req, res) => {
 
 
 // Java route
-Featureroute.get("/api/v1/java",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, JavaFeature);
-});
+Featureroute.get("/api/v1/java", getJavaFeatures);
 
 Featureroute.post("/api/v1/postJava", async (req, res) => {
     await postData(req, res, JavaFeature);
@@ -216,9 +185,7 @@ Featureroute.post("/api/v1/postJava", async (req, res) => {
 
 
 // JavaScript route
-Featureroute.get("/api/v1/js",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, JavaScriptFeature);
-});
+Featureroute.get("/api/v1/js", getJavaScriptFeatures);
 
 Featureroute.post("/api/v1/postJavaScript", async (req, res) => {
     await postData(req, res, JavaScriptFeature);
@@ -226,9 +193,7 @@ Featureroute.post("/api/v1/postJavaScript", async (req, res) => {
 
 
 // Nodejs route
-Featureroute.get("/api/v1/nodejs",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, NodejsFeature);
-});
+Featureroute.get("/api/v1/nodejs", getNodejsFeatures);
 
 Featureroute.post("/api/v1/postNodejs", async (req, res) => {
     await postData(req, res, NodejsFeature);
@@ -236,18 +201,14 @@ Featureroute.post("/api/v1/postNodejs", async (req, res) => {
 
 
 // OOps route
-Featureroute.get("/api/v1/oops",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, OOpsFeature);
-});
+Featureroute.get("/api/v1/oops", getOOpsFeatures);
 
 Featureroute.post("/api/v1/postOOps", async (req, res) => {
     await postData(req, res, OOpsFeature);
 });
 
 // Python route
-Featureroute.get("/api/v1/python",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, PythonFeature);
-});
+Featureroute.get("/api/v1/python", getPythonFeatures);
 
 Featureroute.post("/api/v1/postPython", async (req, res) => {
     await postData(req, res, PythonFeature);
@@ -255,9 +216,7 @@ Featureroute.post("/api/v1/postPython", async (req, res) => {
 
 
 // React route
-Featureroute.get("/api/v1/react",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, ReactFeature);
-});
+Featureroute.get("/api/v1/react", getReactFeatures);
 
 Featureroute.post("/api/v1/postReact", async (req, res) => {
     await postData(req, res, ReactFeature);
@@ -265,9 +224,7 @@ Featureroute.post("/api/v1/postReact", async (req, res) => {
 
 
 // RemoteHiring route
-Featureroute.get("/api/v1/remoteresource",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, RemoteHiringFeature);
-});
+Featureroute.get("/api/v1/remoteresource", getRemoteHiringFeatures);
 
 Featureroute.post("/api/v1/postRemoteHiring", async (req, res) => {
     await postData(req, res, RemoteHiringFeature);
@@ -275,9 +232,7 @@ Featureroute.post("/api/v1/postRemoteHiring", async (req, res) => {
 
 
 // ResumeGuide route
-Featureroute.get("/api/v1/resume",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, ResumeGuideFeature);
-});
+Featureroute.get("/api/v1/resume", getResumeGuideFeatures);
 
 Featureroute.post("/api/v1/postResumeGuide", async (req, res) => {
     await postData(req, res, ResumeGuideFeature);
@@ -285,9 +240,7 @@ Featureroute.post("/api/v1/postResumeGuide", async (req, res) => {
 
 
 // RoadMaps route
-Featureroute.get("/api/v1/RoadMaps",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, RoadMapsFeature);
-});
+Featureroute.get("/api/v1/RoadMaps", getRoadMapsFeatures);
 
 Featureroute.post("/api/v1/postRoadMaps", async (req, res) => {
     await postData(req, res, RoadMapsFeature);
@@ -295,9 +248,7 @@ Featureroute.post("/api/v1/postRoadMaps", async (req, res) => {
 
 
 // StartupList route
-Featureroute.get("/api/v1/startup", cache.route({name:'backend',expire:60*60*60}),async (req, res) => {
-    await getData(req, res, StartupListFeature);
-});
+Featureroute.get("/api/v1/startup", getStartupListFeatures);
 
 Featureroute.post("/api/v1/postStartupList", async (req, res) => {
     await postData(req, res, StartupListFeature);
@@ -305,9 +256,7 @@ Featureroute.post("/api/v1/postStartupList", async (req, res) => {
 
 
 // SystemDesign route
-Featureroute.get("/api/v1/systemdesign",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, SystemDesignFeature);
-});
+Featureroute.get("/api/v1/systemdesign", getSystemDesignFeatures);
 
 Featureroute.post("/api/v1/postSystemDesign", async (req, res) => {
     await postData(req, res, SystemDesignFeature);
@@ -315,9 +264,7 @@ Featureroute.post("/api/v1/postSystemDesign", async (req, res) => {
 
 
 // CompaniesCodingQuestions route
-Featureroute.get("/api/v1/companiesqs",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, CompaniesCodingQuestionsFeature);
-});
+Featureroute.get("/api/v1/companiesqs", getCompaniesCodingQuestionsFeatures);
 
 Featureroute.post("/api/v1/postCompaniesCodingQuestions", async (req, res) => {
     await postData(req, res, CompaniesCodingQuestionsFeature);
@@ -325,9 +272,7 @@ Featureroute.post("/api/v1/postCompaniesCodingQuestions", async (req, res) => {
 
 
 // OperatingSystem route
-Featureroute.get("/api/v1/os",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, OperatingSystemFeature);
-});
+Featureroute.get("/api/v1/os", getOperatingSystemFeatures);
 
 Featureroute.post("/api/v1/postOperatingSystem", async (req, res) => {
     await postData(req, res, OperatingSystemFeature);
@@ -335,9 +280,7 @@ Featureroute.post("/api/v1/postOperatingSystem", async (req, res) => {
 
 
 // CloudComputing route
-Featureroute.get("/api/v1/cloud",cache.route({name:'backend',expire:60*60*60}), async (req, res) => {
-    await getData(req, res, CloudComputingFeature);
-});
+Featureroute.get("/api/v1/cloud", getCloudComputingFeatures);
 
 Featureroute.post("/api/v1/postCloudComputing", async (req, res) => {
     await postData(req, res, CloudComputingFeature);

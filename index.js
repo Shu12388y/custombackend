@@ -38,7 +38,7 @@ dotenv.config({ path: '.env' });
         origin: ['http://localhost:3000', 'https://letsresource.in']
     }));
 
-    app.use(limiter);
+    // app.use(limiter);
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json({ limit: "100kb" }));
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
