@@ -13,6 +13,7 @@ import HealthRoute from "./routes/Health.Route.js";
 import { mail } from "./utils/email.js";
 import susbcribeRoute from "./routes/Subscribe.Route.js";
 import interviewRoute from "./routes/Interview.Route.js";
+import morgan from "morgan";
 
 
 
@@ -42,8 +43,14 @@ dotenv.config({ path: '.env' });
     app.use(express.json({ limit: "100kb" }));
     app.use(bodyParser.urlencoded({ extended: true, limit: '100kb' }));
     app.use(helmet());
-
     app.set('trust proxy', 'loopback, 35.160.120.126');
+    app.use(morgan(':remote-addr :method :url :status :res[content-length] - :response-time ms'));
+
+
+  
+
+
+
 
     // Routes 
     app.use(Featureroute);
