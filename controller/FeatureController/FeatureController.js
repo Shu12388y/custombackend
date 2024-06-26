@@ -4,7 +4,7 @@ import {AI_MLFeature,CodingResourcesFeature,ComputerNetworkFeature,DBMS_SQLResou
 
 
 const nodeCache =  new NodeCache({
-    stdTTL:60*60
+    stdTTL:30*60
 })
 
 
@@ -24,7 +24,7 @@ export const getFeature = async(_req,res) =>{
          return res.status(404).json({"message":"Not Found"})
      }
  
-     return res.status(200).json({"response":response})
+     return res.status(200).json({"data":response})
    } catch (error) {
             return res.status(500).json({"message":"server error"}) 
    }
@@ -47,7 +47,7 @@ export const getwebFeature = async(_req,res) =>{
          return res.status(404).json({"message":"Not Found"})
      }
  
-     return res.status(200).json({"response":response})
+     return res.status(200).json({"data":response})
    } catch (error) {
             return res.status(500).json({"message":"server error"}) 
    }
@@ -70,7 +70,7 @@ export const getcodingFeature = async(_req,res) =>{
          return res.status(404).json({"message":"Not Found"})
      }
  
-     return res.status(200).json({"response":response})
+     return res.status(200).json({"data":response})
    } catch (error) {
             return res.status(500).json({"message":"server error"}) 
    }
@@ -93,7 +93,7 @@ export const getcomputernewtworkFeature = async(_req,res) =>{
          return res.status(404).json({"message":"Not Found"})
      }
  
-     return res.status(200).json({"response":response})
+     return res.status(200).json({"data":response})
    } catch (error) {
             return res.status(500).json({"message":"server error"}) 
    }
@@ -119,7 +119,7 @@ export const getDBMS_SQLResourcesFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -142,7 +142,7 @@ export const getDSAHandwrittenNotesFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -165,7 +165,7 @@ export const getDataEngineerFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -188,7 +188,7 @@ export const getDataScienceFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -211,7 +211,7 @@ export const getDsaResourcesFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -234,7 +234,7 @@ export const getHRInterviewQuestionsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -257,7 +257,7 @@ export const getCheetSheetFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -280,7 +280,7 @@ export const getChatGPTFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -303,7 +303,7 @@ export const getCloudComputingFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -326,7 +326,7 @@ export const getOperatingSystemFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -349,7 +349,7 @@ export const getDevopsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -372,7 +372,7 @@ export const getCompaniesCodingQuestionsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -395,7 +395,7 @@ export const getSystemDesignFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -418,7 +418,7 @@ export const getStartupListFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -441,7 +441,7 @@ export const getRoadMapsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -464,7 +464,7 @@ export const getResumeGuideFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -487,7 +487,7 @@ export const getRemoteHiringFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -510,7 +510,7 @@ export const getReactFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -533,7 +533,7 @@ export const getTypescriptFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -556,7 +556,7 @@ export const getBigDataFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -579,7 +579,7 @@ export const getC_ProgramFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -602,7 +602,7 @@ export const getJavaFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -625,7 +625,7 @@ export const getJavaScriptFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -648,7 +648,7 @@ export const getNodejsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -671,7 +671,7 @@ export const getOOpsFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -694,7 +694,7 @@ export const getPythonFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -719,7 +719,7 @@ export const getaiFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }

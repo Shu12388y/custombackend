@@ -34,7 +34,7 @@ export const getCloudRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -57,7 +57,7 @@ export const getDevopsRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -80,7 +80,7 @@ export const getDERoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -103,7 +103,7 @@ export const getDSRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -126,7 +126,7 @@ export const getJavaRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -149,7 +149,7 @@ export const getJavaScriptRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -172,7 +172,7 @@ export const getPowerBiRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -195,7 +195,7 @@ export const getPythonRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -218,7 +218,7 @@ export const getRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -241,7 +241,7 @@ export const getWebDevRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "response": response });
+        return res.status(200).json({ "data": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
