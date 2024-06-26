@@ -12,8 +12,10 @@ import {CloudRoadmap,
 import NodeCache from "node-cache";
 
 const nodeCache = new NodeCache({
-    stdTTL:30*60
+    stdTTL:60*60
 })
+
+
 
 // Function to get all items for CloudRoadmap
 export const getCloudRoadmapFeatures = async (req, res) => {
@@ -32,7 +34,7 @@ export const getCloudRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -55,7 +57,7 @@ export const getDevopsRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -78,7 +80,7 @@ export const getDERoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -101,7 +103,7 @@ export const getDSRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -124,7 +126,7 @@ export const getJavaRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -147,7 +149,7 @@ export const getJavaScriptRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -170,7 +172,7 @@ export const getPowerBiRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -193,7 +195,7 @@ export const getPythonRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -216,7 +218,7 @@ export const getRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
@@ -239,7 +241,7 @@ export const getWebDevRoadmapFeatures = async (req, res) => {
             return res.status(404).json({ "message": "Not Found" });
         }
 
-        return res.status(200).json({ "data": response });
+        return res.status(200).json({ "response": response });
     } catch (error) {
         return res.status(500).json({ "message": "Server Error" });
     }
