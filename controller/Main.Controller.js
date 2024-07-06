@@ -1,8 +1,3 @@
-
-
-
-
-
 export async function getData(_req, res, modelName) {
     try {
         if (!modelName) {
