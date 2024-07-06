@@ -14,7 +14,7 @@ import { mail } from "./utils/email.js";
 import susbcribeRoute from "./routes/Subscribe.Route.js";
 import interviewRoute from "./routes/Interview.Route.js";
 import morgan from "morgan";
-
+import ProgramprojectRouter from "./routes/ProgramProject.Route.js"; 
 
 
 dotenv.config({ path: '.env' });
@@ -60,7 +60,7 @@ dotenv.config({ path: '.env' });
     app.use(HealthRoute);
     app.use(susbcribeRoute);
     app.use(interviewRoute);
-
+    app.use(ProgramprojectRouter);
 
 
 
