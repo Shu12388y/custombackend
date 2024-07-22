@@ -5,7 +5,7 @@ import { JavaProjects } from "../JavaProject.model.js";
 import { MlProjects } from "../mlProject.model.js";
 import { programProject } from "../programProject.model.js";
 import { ReactProjects } from "../reactProject.model.js";
-
+import {PythonProject} from "../pythonProject.model.js"
 
 
 
@@ -16,5 +16,6 @@ export {
     JavaProjects,
     MlProjects,
     ReactProjects,
-    programProject
+    programProject,
+    PythonProject
 }

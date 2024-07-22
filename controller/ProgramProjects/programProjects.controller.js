@@ -1,4 +1,4 @@
-import { programProject,CProjects,DSProjects,MlProjects,JavaProjects,ReactProjects,FullStackProjects } from "../../model/programProject/exports/programprojectexport.js";
+import { programProject,PythonProject,CProjects,DSProjects,MlProjects,JavaProjects,ReactProjects,FullStackProjects } from "../../model/programProject/exports/programprojectexport.js";
 import NodeCache from "node-cache";
 
 
@@ -145,6 +145,27 @@ export const getFullStackProjects = async (_req, res) => {
         } else {
             data = await FullStackProjects.find({}).lean();
             nodeCache.set("fullstackprojects", JSON.stringify(data));
+        }
+
+        if (!data) {
+            return res.status(404).json({ "message": "Not Found" });
+        }
+
+        return res.status(200).json({ "data": data });
+    } catch (error) {
+        return res.status(500).json({ "message": "error" });
+    }
+}
+
+
+export const getPythonProject = async(_req,res) =>{
+    try {
+        let data;
+        if (nodeCache.has("pythonprojects")) {
+            data = JSON.parse(nodeCache.get("pythonprojects"));
+        } else {
+            data = await PythonProject.find({}).lean();
+            nodeCache.set("pythonprojects", JSON.stringify(data));
         }
 
         if (!data) {

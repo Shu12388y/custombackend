@@ -1,11 +1,12 @@
 import express from "express";
-import { getProgramProject,getCProjects,getDSProjects,getFullStackProjects,getJavaProjects,getMlProjects,getReactProjects } from "../controller/ProgramProjects/programProjects.controller.js";
+import { getProgramProject,getPythonProject,getCProjects,getDSProjects,getFullStackProjects,getJavaProjects,getMlProjects,getReactProjects } from "../controller/ProgramProjects/programProjects.controller.js";
 import { CProjects,
     DSProjects,
     FullStackProjects,
     JavaProjects,
     MlProjects,
     ReactProjects,
+    PythonProject,
     programProject} from "../model/programProject/exports/programprojectexport.js";
 
 import {postData} from "../controller/Main.Controller.js";
@@ -69,7 +70,10 @@ ProgramprojectRouter.post("/api/v1/postreactproject",async(req,res)=>{
 })
 
 
-
+ProgramprojectRouter.get("/api/v1/getpythonproject",getPythonProject);
+ProgramprojectRouter.post("/api/v1/postpythonproject",async(req,res)=>{
+  await postData(req,res,PythonProject);
+})
 
 
 
