@@ -15,8 +15,6 @@ import susbcribeRoute from "./routes/Subscribe.Route.js";
 import interviewRoute from "./routes/Interview.Route.js";
 import morgan from "morgan";
 import ProgramprojectRouter from "./routes/ProgramProject.Route.js"; 
-import secure from "ssl-express-www"
-
 
 dotenv.config({ path: '.env' });
 
@@ -39,7 +37,7 @@ dotenv.config({ path: '.env' });
         origin: ['http://localhost:3000', 'https://letsresource.in']
     }));
 
-    app.use(secure)
+   
     app.use(limiter);
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json({ limit: "100kb" }));
