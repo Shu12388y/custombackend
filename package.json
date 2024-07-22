@@ -24,7 +24,6 @@
     "morgan": "^1.10.0",
     "node-cache": "^5.1.2",
     "nodemailer": "^6.9.13",
-    "redis": "^4.6.14",
-    "ssl-express-www": "^3.2.1"
+    "redis": "^4.6.14"
   }
 }
